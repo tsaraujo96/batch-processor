@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="batch_processor",
+    name="batch-processor",
     version="0.1.0",
     description="A simple Python library for asynchronous batch processing.",
     long_description=open("README.md").read(),

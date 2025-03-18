@@ -37,7 +37,12 @@ class BatchProcessorAsync:
                 else:
                     results.append((None, {"limit": batch_size, "offset": offset}))  # Failed batch
                 queue.task_done()
-            session.close()
+
+            try:
+                session.close()
+            except (BaseException,):
+                ...
+
 
         results = []
         tasks = [worker(results) for _ in range(num_threads)]
